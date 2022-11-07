@@ -2,10 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="5eddf2f0-700c-4c10-b3af-abb3a8203915" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/React - The Complete Guide (incl Hooks, React Router, Redux)/archive/react-basics/src/components/Expenses.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/React - The Complete Guide (incl Hooks, React Router, Redux)/archive/react-basics/src/components/Expenses.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/React - The Complete Guide (incl Hooks, React Router, Redux)/archive/react-basics/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/React - The Complete Guide (incl Hooks, React Router, Redux)/archive/react-basics/src/App.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/React - The Complete Guide (incl Hooks, React Router, Redux)/archive/react-basics/src/components/NewExpense/ExpenseForm.js" beforeDir="false" afterPath="$PROJECT_DIR$/React - The Complete Guide (incl Hooks, React Router, Redux)/archive/react-basics/src/components/NewExpense/ExpenseForm.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -15,8 +13,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="CSS File" />
         <option value="JavaScript File" />
+        <option value="CSS File" />
       </list>
     </option>
   </component>
@@ -34,19 +32,21 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "C:/Users/jerry/WebstormProjects/React-18/React - The Complete Guide (incl Hooks, React Router, Redux)/react-complete-guide",
-    "list.type.of.created.stylesheet": "CSS",
-    "nodejs_package_manager_path": "npm",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/jerry/WebstormProjects/React-18/React - The Complete Guide (incl Hooks, React Router, Redux)/react-complete-guide&quot;,
+    &quot;list.type.of.created.stylesheet&quot;: &quot;CSS&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\jerry\WebstormProjects\React-18\React - The Complete Guide (incl Hooks, React Router, Redux)\archive\react-basics\src\components\Expenses" />
+      <recent name="C:\Users\jerry\WebstormProjects\React-18\React - The Complete Guide (incl Hooks, React Router, Redux)\archive\react-basics\src\components\UI" />
       <recent name="C:\Users\jerry\WebstormProjects\React-18\React - The Complete Guide (incl Hooks, React Router, Redux)\archive\react-basics\src" />
     </key>
   </component>
@@ -54,11 +54,6 @@
     <configuration type="JavascriptDebugType" temporary="true" nameIsGenerated="true" uri="http://localhost:3000">
       <method v="2" />
     </configuration>
-    <recent_temporary>
-      <list>
-        <item itemvalue="JavaScript Debug." />
-      </list>
-    </recent_temporary>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -70,7 +65,9 @@
       <updated>1667593545247</updated>
       <workItem from="1667593546538" duration="920000" />
       <workItem from="1667595087512" duration="1130000" />
-      <workItem from="1667684207481" duration="12622000" />
+      <workItem from="1667684207481" duration="12947000" />
+      <workItem from="1667785537115" duration="2340000" />
+      <workItem from="1667839607882" duration="7027000" />
     </task>
     <servers />
   </component>
