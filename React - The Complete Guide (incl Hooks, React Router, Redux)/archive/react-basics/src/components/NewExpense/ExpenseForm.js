@@ -5,7 +5,6 @@ const ExpenseForm = (props) => {
     const [enteredTitle, setEnteredTitle] = useState('')
     const [enteredAmount, setEnteredAmount] = useState('')
     const [enteredDate, setEnteredDate] = useState('')
-    const [isEditing, Editing] = useState(false)
     // const [userInput, setUserInput] = useState({
     //     enteredTitle: '',
     //     enteredAmount: '',
@@ -39,65 +38,42 @@ const ExpenseForm = (props) => {
         // })
     };
 
-    const startEditing = () => {
-        Editing(true)
-    }
-
-    const stopEditing = () => {
-        Editing(false);
-    }
-
     const submitHandler = (event) => {
-        if(!isEditing) {
-            Editing(true)
-            event.preventDefault();
-        } else if(isEditing){
-            console.log("A")
-            event.preventDefault();
-            const expenseData = {
-                title: enteredTitle,
-                amount: enteredAmount,
-                date: new Date(enteredDate)
-            };
+        event.preventDefault();
+        const expenseData = {
+            title: enteredTitle,
+            amount: enteredAmount,
+            date: new Date(enteredDate)
+        };
 
-            props.onSaveExpenseData(expenseData);    // sends expenseData to NewExpense.js
-            console.log(expenseData)
-            setEnteredTitle('');            // sets the queries to blank
-            setEnteredAmount('');
-            setEnteredDate('');
-            Editing(false)
+        props.onSaveExpenseData(expenseData);    // sends expenseData to NewExpense.js
+        setEnteredTitle('');            // sets the queries to blank
+        setEnteredAmount('');
+        setEnteredDate('');
         }
-    };
 
-    if(!isEditing) {
-        return(
-            <div className="new-expense__actions">
-                <button onClick={() => Editing(true)}>Add an Expense</button>
+    return (
+        <form onSubmit={submitHandler}>
+            <div className="new-expense__controls">
+                <div className="new-expense__control">
+                    <label>Title</label>
+                    <input type="text" value={enteredTitle} onChange={titleChangeHandler}/>
+                </div>
+                <div className="new-expense__control">
+                    <label>Amount</label>
+                    <input type="number" min="0.01" step="0.01" value={enteredAmount} onChange={amountChangeHandler}/>
+                </div>
+                <div className="new-expense__control">
+                    <label>Date</label>
+                    <input type="date" min="2019-01-01" max="2022-12-31" value={enteredDate} onChange={dateChangeHandler}/>
+                </div>
             </div>
-        )
-    }else{
-        return (
-            <form onSubmit={submitHandler}>
-                <div className="new-expense__controls">
-                    <div className="new-expense__control">
-                        <label>Title</label>
-                        <input type="text" value={enteredTitle} onChange={titleChangeHandler}/>
-                    </div>
-                    <div className="new-expense__control">
-                        <label>Amount</label>
-                        <input type="number" min="0.01" step="0.01" value={enteredAmount} onChange={amountChangeHandler}/>
-                    </div>
-                    <div className="new-expense__control">
-                        <label>Date</label>
-                        <input type="date" min="2019-01-01" max="2022-12-31" value={enteredDate} onChange={dateChangeHandler}/>
-                    </div>
-                </div>
-                <div className="new-expense__actions">
-                    <button onClick={() => Editing(false)}>Cancel</button>
-                    <button type="submit">Add Expense</button>
-                </div>
-            </form>)
-    }
-}
+            <div className="new-expense__actions">
+                <button type="button" onClick={props.onCancel}>Cancel</button>
+                <button type="submit">Add Expense</button>
+            </div>
+        </form>
+    );
+};
 
 export default ExpenseForm;
