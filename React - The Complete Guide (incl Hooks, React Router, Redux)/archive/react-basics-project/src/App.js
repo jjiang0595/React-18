@@ -6,11 +6,13 @@ function App() {
     const [usersList, setUsersList] = useState([]);
 
     const addUserHandler = (uName, uAge) => {
+        console.log("RECEIVED", uName, uAge)
         setUsersList((newUser) => {
             return [
                 ...newUser, {name: uName, age: uAge, id: Math.random().toString()}
             ]
         })
+        console.log(usersList)
     }
 
     return (

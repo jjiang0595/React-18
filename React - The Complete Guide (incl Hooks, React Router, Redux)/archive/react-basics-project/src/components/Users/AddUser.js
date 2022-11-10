@@ -7,23 +7,23 @@ const AddUser = (props) => {
 
 
     const addUserHandler = (event) => {
-        event.defaultPrevented()
+        event.preventDefault();
         if (enteredUsername.trim().length === 0 || enteredAge.trim().length === 0) {
             setError({
                 title: 'Invalid Input',
-                message: 'Please enter a valid username and age.'
-            })
+                message: 'Please enter a valid username and age.',
+            });
             return;
         }
         if (+enteredAge < 1) {
             setError({
                 title: 'Invalid Age',
-                message: 'Please enter a age greater than zero.'
-            })
+                message: 'Please enter a age greater than zero.',
+            });
             return;
         }
 
-        event.onAddUser(enteredUsername, enteredAge);
+        props.onAddUser(enteredUsername, enteredAge);
         setEnteredUsername('');
         setEnteredAge('');
     }
@@ -45,7 +45,7 @@ const AddUser = (props) => {
                     <label htmlFor="age">Age (Years)</label>
                     <input id="age" type="number" value={enteredAge} onChange={ageChangeHandler}/>
                 </div>
-                <button>Add User</button>
+                <button type="submit">Add User</button>
             </form>
         </div>
     );
