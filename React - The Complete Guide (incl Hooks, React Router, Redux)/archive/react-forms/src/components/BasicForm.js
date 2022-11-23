@@ -62,7 +62,6 @@ const BasicForm = (props) => {
               id='firstName'
               onChange={firstNameChangeHandler}
               onBlur={firstNameBlurHandler}
-              reset={resetFirstName}
           />
             {firstNameIsInvalid && <p className='error-text'>First name must not be empty.</p>}
         </div>
@@ -74,7 +73,6 @@ const BasicForm = (props) => {
                 id='lastName'
                 onChange={lastNameChangeHandler}
                 onBlur={lastNameBlurHandler}
-                reset={resetLastName}
             />
             {lastNameIsInvalid && <p className="error-text">Last name must not be empty.</p>}
         </div>
@@ -87,7 +85,6 @@ const BasicForm = (props) => {
               id='email'
               onChange={emailChangeHandler}
               onBlur={emailBlurHandler}
-              reset={resetEmail}
           />
           {emailIsInvalid && <p className="error-text">Email must not be empty.</p>}
       </div>
