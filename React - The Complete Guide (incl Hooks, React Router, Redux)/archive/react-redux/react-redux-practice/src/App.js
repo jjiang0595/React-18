@@ -6,7 +6,6 @@ import {useEffect} from "react";
 import Notification from "./components/UI/Notification";
 import {fetchCartData, sendCartData} from "./store/cartActions";
 
-let isInitial = true;
 
 function App() {
     const dispatch = useDispatch()
@@ -19,11 +18,9 @@ function App() {
     }, [dispatch])
 
     useEffect( () => {
-        if (isInitial) {
-            isInitial = false
-            return
+        if (cart.changed) {
+            dispatch(sendCartData(cart))
         }
-        dispatch(sendCartData(cart))
     }, [cart, dispatch])
 
 
