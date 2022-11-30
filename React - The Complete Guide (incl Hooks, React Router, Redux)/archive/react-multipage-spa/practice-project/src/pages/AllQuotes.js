@@ -4,9 +4,9 @@ import QuoteItem from "../components/quotes/QuoteItem";
 
 const AllQuotes = () => {
     return (
-        <div>
+        <>
             <p>All Quotes!</p>
-        </div>
+        </>
     )
 }
 
