@@ -1,10 +1,12 @@
-import {useRef, useState} from 'react';
-
+import {useContext, useRef, useState} from 'react';
+import AuthContext from "../../store/auth-context";
 import classes from './AuthForm.module.css';
 
 const AuthForm = () => {
     const emailInputRef = useRef()
     const passwordInputRef = useRef()
+
+    const authCtx = useContext(AuthContext)
 
     const [isLogin, setIsLogin] = useState(true);
     const [isLoading, setIsLoading] = useState(false)
@@ -19,6 +21,7 @@ const AuthForm = () => {
         const enteredEmail = emailInputRef.current.value
         const enteredPassword = passwordInputRef.current.value
 
+        setIsLoading(true)
         let url;
         if (isLogin) {
             url = 'https://identitytoolkit.googleapis.com/v1/accounts:signInWithPassword?key=AIzaSyBy08x4En8S9091bVDT37s0gJhgydFE7t0'
@@ -36,6 +39,7 @@ const AuthForm = () => {
                     'Content-Type': 'application/json'
                 }
             }).then(res => {
+            setIsLoading(false)
             if (res.ok) {
                 return res.json()
             } else {
@@ -48,7 +52,7 @@ const AuthForm = () => {
                 })
             }
             }).then(data => {
-                console.log(data)
+                authCtx.login(data.idToken)
             }).catch(err => {
                 alert(err.message)
             })
