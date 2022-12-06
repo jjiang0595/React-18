@@ -1,5 +1,6 @@
 import MeetupList from "../components/meetups/MeetupList";
-import {useEffect, useState} from "react";
+import {MongoClient} from 'mongodb'
+import Head from 'next/head'
 
 const DUMMY_MEETUPS = [
     {
@@ -20,7 +21,16 @@ const DUMMY_MEETUPS = [
 ]
 
 function HomePage(props) {
-    return <MeetupList meetups={props.meetups}/>
+    return <>
+        <Head>
+            <title>React Meetups</title>
+            <meta
+                name="description"
+                content="Browse a huge list of highly active React meetups!"
+            />
+        </Head>
+        <MeetupList meetups={props.meetups}/>
+    </>
 }
 
 // export async function getServerSideProps(context) {
@@ -34,11 +44,26 @@ function HomePage(props) {
 //     }
 // }
 export async function getStaticProps(props) {
+    const client = await MongoClient.connect('mongodb+srv://admin:PM9M0VTu7m7eNxGy@meetups.tnoxu2l.mongodb.net/test')
+    const db = client.db()
+
+    const meetupsCollection = db.collection('meetups')
+
+    const meetups = await meetupsCollection.find().toArray()
+
+    client.close()
+
     return {
         props: {
-            meetups: DUMMY_MEETUPS
+            meetups: meetups.map(meetup => ({
+                title: meetup.title,
+                address: meetup.address,
+                image: meetup.image,
+                id: meetup._id.toString()
+            }))
         },
         revalidate: 1
     }
 }
+
 export default HomePage
