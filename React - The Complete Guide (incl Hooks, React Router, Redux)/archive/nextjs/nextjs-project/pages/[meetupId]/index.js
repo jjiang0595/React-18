@@ -2,6 +2,7 @@ import {MongoClient, ObjectId} from 'mongodb'
 import MeetupDetail from "../../components/meetups/MeetupDetail";
 import Head from "next/head";
 
+const mongoUrl = process.env.MONGODB_URI;
 
 const MeetupDetails = (props) => {
     return <>
@@ -22,7 +23,6 @@ const MeetupDetails = (props) => {
 }
 
 export async function getStaticPaths() {
-    const mongoUrl = process.env.MONGODB_URI;
     const client = await MongoClient.connect(mongoUrl)
     const db = client.db()
 
@@ -43,7 +43,6 @@ export async function getStaticPaths() {
 }
 
 export async function getStaticProps(context) {
-    const mongoUrl = process.env.MONGODB_URI;
     const client = await MongoClient.connect(mongoUrl)
     const db = client.db()
 
