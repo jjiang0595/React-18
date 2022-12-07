@@ -2,6 +2,8 @@ import MeetupList from "../components/meetups/MeetupList";
 import {MongoClient} from 'mongodb'
 import Head from 'next/head'
 
+const mongoUrl = process.env.MONGODB_URI;
+
 const DUMMY_MEETUPS = [
     {
         id: 'm1',
@@ -44,7 +46,6 @@ function HomePage(props) {
 //     }
 // }
 export async function getStaticProps(props) {
-    const mongoUrl = process.env.MONGODB_URI;
     const client = await MongoClient.connect(mongoUrl)
     const db = client.db()
 
