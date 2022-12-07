@@ -22,7 +22,8 @@ const MeetupDetails = (props) => {
 }
 
 export async function getStaticPaths() {
-    const client = await MongoClient.connect('mongodb+srv://admin:PM9M0VTu7m7eNxGy@meetups.tnoxu2l.mongodb.net/test')
+    const mongoUrl = process.env.REACT_APP_BASE_URL;
+    const client = await MongoClient.connect(mongoUrl)
     const db = client.db()
 
     const meetupsCollection = db.collection('meetups')
