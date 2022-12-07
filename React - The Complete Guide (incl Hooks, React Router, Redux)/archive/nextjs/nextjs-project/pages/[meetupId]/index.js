@@ -22,9 +22,7 @@ const MeetupDetails = (props) => {
     </>
 }
 
-export async function getStaticPaths(context) {
-    const meetupId = context.params.meetupId
-
+export async function getStaticPaths() {
     const client = await MongoClient.connect(mongoUrl)
     const db = client.db()
 
@@ -45,6 +43,8 @@ export async function getStaticPaths(context) {
 }
 
 export async function getStaticProps(context) {
+    const meetupId = context.params.meetupId
+
     const client = await MongoClient.connect(mongoUrl)
     const db = client.db()
 
