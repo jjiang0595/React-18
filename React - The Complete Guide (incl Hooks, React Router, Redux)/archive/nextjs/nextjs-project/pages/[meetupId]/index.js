@@ -23,6 +23,8 @@ const MeetupDetails = (props) => {
 }
 
 export async function getStaticPaths() {
+    const meetupId = context.params.meetupId
+
     const client = await MongoClient.connect(mongoUrl)
     const db = client.db()
 
