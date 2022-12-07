@@ -22,7 +22,7 @@ const MeetupDetails = (props) => {
 }
 
 export async function getStaticPaths() {
-    const mongoUrl = process.env.REACT_APP_BASE_URL;
+    const mongoUrl = process.env.MONGODB_URI;
     const client = await MongoClient.connect(mongoUrl)
     const db = client.db()
 
@@ -43,7 +43,7 @@ export async function getStaticPaths() {
 }
 
 export async function getStaticProps(context) {
-    const mongoUrl = process.env.REACT_APP_BASE_URL;
+    const mongoUrl = process.env.MONGODB_URI;
     const client = await MongoClient.connect(mongoUrl)
     const db = client.db()
 

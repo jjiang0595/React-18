@@ -5,7 +5,7 @@ async function handler(req, res) {
 
         const {title, image, address, description} = data
 
-        const mongoUrl = process.env.REACT_APP_BASE_URL;
+        const mongoUrl = process.env.MONGODB_URI;
         const client = await MongoClient.connect(mongoUrl)
         const db = client.db()
 
