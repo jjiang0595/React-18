@@ -9,14 +9,12 @@ import styles from './Todos.module.css'
 //     </ul>
 // }
 
-type TodosProp = {
-    items: Todo[];
-    children?: ReactNode;
-}
-const Todos = (props: TodosProp) => {
-    return <ul>
+
+
+const Todos: React.FC<{items: Todo[]; onRemoveTodo: (id: string) => void}> = (props) => {
+    return <ul className={styles.list}>
         {props.items.map((item) => (
-            <TodoItem key={item.id} text={item.text} />
+            <TodoItem key={item.id} text={item.text} onRemoveTodo={props.onRemoveTodo.bind(null, item.id)}/>
         ))}
     </ul>
 }
