@@ -23,3 +23,13 @@ person = {
     name: 'Max',
     age: 32
 }
+
+let people: {
+    name: string;
+    age: number;
+}[];
+
+people = {
+    name: ['Max'],
+    age: 32
+}
