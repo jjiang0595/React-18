@@ -1,5 +1,5 @@
 import React, {ReactNode} from 'react'
-
+import Todo from "../models/todos";
 // const Todos: React.FC<{items: string[]}> = props => {
 //     return <ul>
 //         {props.}
@@ -7,13 +7,13 @@ import React, {ReactNode} from 'react'
 // }
 
 type TodosProp = {
-    items: string[];
+    items: Todo[];
     children?: ReactNode;
 }
 const Todos = (props: TodosProp) => {
     return <ul>
         {props.items.map((item) => (
-            <li key={item}>{item}</li>
+            <li key={item.id}>{item.text}</li>
         ))}
     </ul>
 }
