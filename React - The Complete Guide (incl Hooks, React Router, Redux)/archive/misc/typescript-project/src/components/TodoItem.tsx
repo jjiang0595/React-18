@@ -5,5 +5,5 @@ type itemProp = {
 }
 
 export const TodoItem = (props: itemProp) => {
-    return <li>{props.text}</li>
+    return <li className={styles.item}>{props.text}</li>
 }
