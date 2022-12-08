@@ -2,7 +2,7 @@ let age: number
 
 age = 12
 
-let userName: string
+let userName: string | string[]
 
 userName = 'Max'
 
@@ -29,7 +29,7 @@ let people: {
     age: number;
 }[];
 
-people = {
-    name: ['Max'],
-    age: 32
-}
+let course: string|number = 'React - The Complete Guide'
+
+course = 12341
+
