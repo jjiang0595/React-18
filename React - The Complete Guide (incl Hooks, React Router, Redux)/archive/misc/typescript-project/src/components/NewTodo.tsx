@@ -1,4 +1,5 @@
 import React, {Props, useRef} from "react";
+import styles from './NewTodo.module.css'
 export const NewTodo: React.FC<{onAddTodo: (text: string) => void}> = (props) => {
     const todoTextInputRef = useRef<HTMLInputElement>(null);
 

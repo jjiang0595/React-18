@@ -1,3 +1,5 @@
+import styles from './TodoItem.module.css'
+
 type itemProp = {
     text: string;
 }
